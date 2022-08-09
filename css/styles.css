@@ -88,6 +88,8 @@ a {
     line-height: 1.14;
     letter-spacing: 0.02em;
 }
+
+
 .bonner .gap {
     column-gap: 50px;
 }
@@ -107,7 +109,17 @@ a {
 }
 
 .primary {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+        ),
+        url(../images/hero.jpg);
     background-color: #2F303A;
+    height: 600px;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 200px 0;
 }
 
@@ -158,9 +170,37 @@ a {
 
 .feature .container  .item {
 width: 270px;
+
+}
+
+.item-before::before {
+    border-radius: 4px;
+    margin-bottom: 50px;
+    display: block;
+    content: "";
+    height: 120px;
+    background-color: #F5F4FA;
+    background-repeat: no-repeat;
+    background-position: center;
+
     
 }
 
+.item-before:nth-child(1)::before {
+background-image: url(../images/antenna.svg);
+}
+
+.item-before:nth-child(2)::before {
+background-image: url(../images/clock.svg);
+}
+
+.item-before:nth-child(3)::before {
+    background-image: url(../images/diagram.svg);
+}
+
+.item-before:nth-child(4)::before {
+    background-image: url(../images/astronaut.svg);
+}
 .feature .title {
     color: var(--title-text-color);
     font-weight: 700;
@@ -177,7 +217,8 @@ width: 270px;
 
 .team .title,
 .blosc .title,
-.work .title {
+.work .title,
+.clients .title {
     color: var(--title-text-color);
     font-weight: 700;
     font-size: 36px;
@@ -223,12 +264,80 @@ width: 270px;
 .team .text {
     font-size: 16px;
     line-height: 1.18;
+    margin-bottom: 16px;
+}
+
+.item-soc {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.link-soc {
+width: 44px;
+height: 44px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+fill: #AFB1B8;
+
+}
+
+.link-soc:hover,
+.link-soc:focus {
+    background-color: var(--accent-color);
+}
+
+.link-soc:hover .icon-soc,
+.link-soc:focus .icon-soc {
+    fill: var(--white-color);
+}
+
+.clients {
+padding-top: 94px;
+padding-bottom: 94px;
+}
+
+.clients-list {
+    display: flex;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.clients-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+
+}
+
+.clients-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: 1px solid #AFB1B8;
+    fill: #AFB1B8;
+}
+
+.clients-item:hover .clients-link,
+.clients-link:focus {
+    border-color: var(--accent-color);
+    fill: var(--accent-color);
 }
 .container-wrap {
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
     background-color: var(--white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 }
 
 .blosc {
@@ -310,6 +419,50 @@ width: 270px;
     color: var(--white-color);
 }
 
+.fon-icon-soc {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+
+
+}
+
+.fon-icon-soc .title {
+    color: var(--white-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.fon-icon-list {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.fon-icon-item {
+    width: 44px;
+    height: 44px;
+}
+
+.fon-icon-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    fill: var(--white-color);
+
+}
+
+.fon-icon-link:hover,
+.fon-icon-link:focus {
+    background-color: var(--accent-color);
+}
 .box .link {
     color:rgba(255, 255, 255, 0.6);
     font-weight: 400;
@@ -328,7 +481,14 @@ width: 270px;
     background-color: var(--accent-color);
     color:var(--white-color);
     cursor: pointer;
+    
 }
+.shadow:hover,
+.shadow:focus {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+
 .link:hover,
 .link:focus {
     color: var(--accent-color);
